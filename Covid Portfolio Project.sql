@@ -23,6 +23,7 @@ WHERE
 
 ORDER BY 1,2
 
+
 -- Looking at Total Cases vs Population
 -- Shows percentage of population that got Covid
 SELECT
@@ -34,6 +35,7 @@ FROM
 --WHERE
 --	 Location LIKE '%Canada%'
 ORDER BY 1,2
+
 
 -- Looking at Countries with Highest Infection Rate compared to Population
 
@@ -50,6 +52,7 @@ GROUP BY
 ORDER BY 
 	PercentPopulationInfected desc
 
+
 --Showing Countries with Highest Death Count per Population
 
 SELECT
@@ -64,6 +67,7 @@ GROUP BY
 	Location
 ORDER BY 
 	TotalDeathCount desc
+
 
 -- Breaking Things Down By Continent
 
@@ -81,6 +85,7 @@ GROUP BY
 	continent
 ORDER BY 
 	TotalDeathCount desc
+
 
 -- Global Numbers
 
@@ -100,6 +105,7 @@ ORDER BY
 	SELECT*
 	FROM	PortfolioProject.dbo.CovidDeaths dea
 
+
 -- Looking at Total Population vs Vaccinations
 
 SELECT
@@ -113,6 +119,7 @@ JOIN
 	WHERE
 		dea.continent IS NOT NULL
 ORDER BY 2, 3
+
 
 -- USE CTE
 
@@ -133,6 +140,7 @@ WHERE
 )
 Select*, (RollingPeopleVaccinated/Population)*100
 From PopvsVac
+
 
 -- TEMP Table
 
@@ -165,6 +173,7 @@ SELECT*,
  (RollingPeopleVaccinated/Population)*100
 FROM 
 	#PercentPopulationVaccinated
+
 
 -- Creating View to store data for later visualizations
 
